@@ -26,6 +26,10 @@ class Queue {
   isEmpty() {
     return this.#frontIndex === this.#backIndex;
   }
+
+  access() {
+    return this.#items;
+  }
 }
 
 export default Queue;
