@@ -3,6 +3,16 @@ import Queue from './queue.js';
 
 const isSameSquare = ([x1, y1], [x2, y2]) => x1 === x2 && y1 === y2;
 
+const showPath = (path) => {
+  const numberOfMoves = path.length - 1;
+  const pluralSuffix = numberOfMoves === 1 ? '' : 's';
+  console.log(
+    `You made it in ${numberOfMoves} move${pluralSuffix}! Here's your path:`,
+  );
+  path.forEach((move) => console.log(move));
+  return '';
+};
+
 const knightMoves = (fromSquare, toSquare) => {
   const queue = new Queue();
   const visitedSquares = [fromSquare];
@@ -21,7 +31,7 @@ const knightMoves = (fromSquare, toSquare) => {
         path.push(currentSquare.square);
         currentSquare = currentSquare.parent;
       }
-      return path.reverse();
+      return showPath(path.reverse());
     }
 
     visitedSquares.push(squareObj.square);
@@ -41,5 +51,7 @@ const knightMoves = (fromSquare, toSquare) => {
 };
 
 console.log(knightMoves([0, 0], [3, 3]));
+console.log(knightMoves([0, 0], [1, 2]));
+console.log(knightMoves([0, 0], [4, 3]));
 console.log(knightMoves([3, 3], [0, 0]));
 console.log(knightMoves([0, 0], [7, 7]));
