@@ -1,7 +1,7 @@
 {
-  "name": "no-browser-template",
+  "name": "knights-travails",
   "version": "1.0.0",
-  "description": "",
+  "description": "Building a function that computes knight moves on a chess board.",
   "main": "src/script.js",
   "type": "module",
   "scripts": {
